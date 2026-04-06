@@ -18,9 +18,9 @@ import pytest_asyncio
 from httpx import ASGITransport, AsyncClient
 from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker, create_async_engine
 
-from backend.database.connection import Base, get_db
-from backend.main import app
-from backend.services.auth_service import create_access_token, hash_password
+from database.connection import Base, get_db
+from main import app
+from services.auth_service import create_access_token, hash_password
 
 
 # ─── Test Database ────────────────────────────────────────────
@@ -78,7 +78,7 @@ async def db_session() -> AsyncGenerator[AsyncSession, None]:
 @pytest_asyncio.fixture
 async def test_user(db_session: AsyncSession) -> dict:
     """Create a test user and return user data with token."""
-    from backend.models.user import User
+    from models.user import User
 
     user = User(
         email="test@example.com",

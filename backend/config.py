@@ -2,7 +2,7 @@
 Application configuration via pydantic-settings.
 
 All settings are loaded from environment variables (or .env file).
-Access settings anywhere via: `from backend.config import get_settings`
+Access settings anywhere via: `from config import get_settings`
 """
 
 from functools import lru_cache
@@ -35,9 +35,9 @@ class Settings(BaseSettings):
     JWT_ALGORITHM: str = "HS256"
     JWT_EXPIRATION_HOURS: int = 24
 
-    # --- Anthropic Claude API ---
-    ANTHROPIC_API_KEY: str = ""
-    CLAUDE_MODEL: str = "claude-haiku-3-5-20251001"
+    # --- Groq API ---
+    GROQ_API_KEY: str = ""
+    CLAUDE_MODEL: str = "llama-3.3-70b-versatile"  # Keeping property name for backwards compatibility
 
     # --- CORS ---
     CORS_ORIGINS: list[str] = [
@@ -72,3 +72,5 @@ def get_settings() -> Settings:
     Uses lru_cache so .env is only read once.
     """
     return Settings()
+
+settings = Settings()

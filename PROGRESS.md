@@ -41,4 +41,10 @@
 
 ---
 
+### Day 4: Backend AI Hardening
+- **Backend Lead:** Hardened `DifficultyAdjuster`, `PerformanceAnalyzer`, and `StrategyPlanner` JSON payloads specifically blocking Llama-70b control characters via strict system prompt formatting rules.
+- Upgraded response properties and parsing layers mapping dynamic outputs correctly to avoid UI rendering crashes.
+
+---
+
 <!-- Future entries go below this line -->

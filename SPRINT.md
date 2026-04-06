@@ -152,7 +152,7 @@
 
 #### [TICKET-009] Difficulty Adjuster Agent
 - **Assigned to:** Backend Lead
-- **Status:** To Do
+- **Status:** Done
 - **Priority:** P1 — High
 - **Dependencies:** TICKET-006
 - **Description:** Implement `backend/agents/difficulty_adjuster.py` using the system prompt from `PROMPTS.md`. Takes score + history, returns difficulty adjustment decision.
@@ -166,7 +166,7 @@
 
 #### [TICKET-010] Performance Analyzer Agent
 - **Assigned to:** Backend Lead
-- **Status:** To Do
+- **Status:** Done
 - **Priority:** P2 — Medium
 - **Dependencies:** TICKET-006
 - **Description:** Implement `backend/agents/performance_analyzer.py`. Analyzes score history and returns strengths, weaknesses, trends, and recommendations.
@@ -179,7 +179,7 @@
 
 #### [TICKET-011] Strategy Planner Agent
 - **Assigned to:** Backend Lead
-- **Status:** To Do
+- **Status:** Done
 - **Priority:** P2 — Medium
 - **Dependencies:** TICKET-006
 - **Description:** Implement `backend/agents/strategy_planner.py`. Recommends next topic based on performance data and learning gaps.

@@ -11,15 +11,15 @@ from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from backend.database.connection import get_db
-from backend.models.user import (
+from database.connection import get_db
+from models.user import (
     AuthResponse,
     User,
     UserCreate,
     UserLogin,
     UserResponse,
 )
-from backend.services.auth_service import (
+from services.auth_service import (
     create_access_token,
     get_current_user,
     hash_password,

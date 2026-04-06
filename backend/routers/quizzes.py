@@ -13,12 +13,12 @@ from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from backend.agents.difficulty_adjuster import DifficultyAdjusterAgent
-from backend.agents.quiz_agent import QuizAgent
-from backend.database.connection import get_db
-from backend.models.lesson import LessonContent
-from backend.models.performance import PerformanceRecord
-from backend.models.quiz import (
+from agents.difficulty_adjuster import DifficultyAdjusterAgent
+from agents.quiz_agent import QuizAgent
+from database.connection import get_db
+from models.lesson import LessonContent
+from models.performance import PerformanceRecord
+from models.quiz import (
     QuestionResult,
     QuizGenerateRequest,
     QuizQuestion,
@@ -26,10 +26,10 @@ from backend.models.quiz import (
     QuizSubmitRequest,
     QuizSubmitResponse,
 )
-from backend.models.session import Session
-from backend.models.user import User
-from backend.services.auth_service import get_current_user
-from backend.services.claude_client import AIGenerationError
+from models.session import Session
+from models.user import User
+from services.auth_service import get_current_user
+from services.claude_client import AIGenerationError
 
 logger = logging.getLogger(__name__)
 router = APIRouter(prefix="/quizzes", tags=["Quizzes"])

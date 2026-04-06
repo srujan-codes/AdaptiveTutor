@@ -1,14 +1,14 @@
 """Models package — re-exports all SQLAlchemy models and Pydantic schemas."""
 
-from backend.models.lesson import LessonContent, LessonGenerateRequest, LessonResponse
-from backend.models.performance import (
+from models.lesson import LessonContent, LessonGenerateRequest, LessonResponse
+from models.performance import (
     PerformanceInsightsResponse,
     PerformanceRecord,
     PerformanceRecordItem,
     PerformanceResponse,
     StrategyResponse,
 )
-from backend.models.quiz import (
+from models.quiz import (
     QuestionResult,
     QuizGenerateRequest,
     QuizQuestion,
@@ -17,8 +17,8 @@ from backend.models.quiz import (
     QuizSubmitRequest,
     QuizSubmitResponse,
 )
-from backend.models.session import Session, SessionCreate, SessionResponse
-from backend.models.user import (
+from models.session import Session, SessionCreate, SessionResponse
+from models.user import (
     AuthResponse,
     DifficultyLevel,
     User,

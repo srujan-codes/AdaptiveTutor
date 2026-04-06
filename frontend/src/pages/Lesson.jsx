@@ -43,7 +43,7 @@ export default function Lesson() {
     try {
       const res = await quizzesApi.generate({ lesson_id: lessonId })
       // Pass quiz data via state to avoid re-fetching
-      navigate(`/quiz/${lessonId}`, { state: { questions: res.data } })
+      navigate(`/quiz/${lessonId}`, { state: { questions: res.data.questions, lessonId: lessonId } })
     } catch (err) {
       setQuizError(err.response?.data?.detail || 'Failed to generate quiz. Please try again.')
     } finally {

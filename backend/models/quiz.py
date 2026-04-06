@@ -9,7 +9,7 @@ from pydantic import BaseModel, Field
 from sqlalchemy import DateTime, ForeignKey, Integer, String, Text, func
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
-from backend.database.connection import Base
+from database.connection import Base
 
 
 class QuizQuestion(Base):

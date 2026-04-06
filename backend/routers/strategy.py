@@ -10,13 +10,13 @@ from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy import func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from backend.agents.performance_analyzer import PerformanceAnalyzerAgent
-from backend.agents.strategy_planner import StrategyPlannerAgent
-from backend.database.connection import get_db
-from backend.models.performance import PerformanceRecord, StrategyResponse
-from backend.models.user import User
-from backend.services.auth_service import get_current_user
-from backend.services.claude_client import AIGenerationError
+from agents.performance_analyzer import PerformanceAnalyzerAgent
+from agents.strategy_planner import StrategyPlannerAgent
+from database.connection import get_db
+from models.performance import PerformanceRecord, StrategyResponse
+from models.user import User
+from services.auth_service import get_current_user
+from services.claude_client import AIGenerationError
 
 logger = logging.getLogger(__name__)
 router = APIRouter(prefix="/strategy", tags=["Strategy"])

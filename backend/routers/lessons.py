@@ -12,13 +12,13 @@ from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from backend.agents.content_generator import ContentGeneratorAgent
-from backend.database.connection import get_db
-from backend.models.lesson import LessonContent, LessonGenerateRequest, LessonResponse
-from backend.models.session import Session
-from backend.models.user import DifficultyLevel, User
-from backend.services.auth_service import get_current_user
-from backend.services.claude_client import AIGenerationError
+from agents.content_generator import ContentGeneratorAgent
+from database.connection import get_db
+from models.lesson import LessonContent, LessonGenerateRequest, LessonResponse
+from models.session import Session
+from models.user import DifficultyLevel, User
+from services.auth_service import get_current_user
+from services.claude_client import AIGenerationError
 
 logger = logging.getLogger(__name__)
 router = APIRouter(prefix="/lessons", tags=["Lessons"])

@@ -3,7 +3,7 @@
  * Route: /quiz/:lessonId
  * Receives questions via router state (from Lesson page) to avoid re-fetching.
  */
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useParams, useLocation, useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 import { quizzesApi } from '../api/client'
@@ -45,7 +45,8 @@ export default function Quiz() {
   const { refreshUser } = useAuth()
 
   // questions can come from router state (from Lesson page)
-  const questions = state?.questions ?? []
+  const [questions, setQuestions] = useState(state?.questions || [])
+  const [loadingQuestions, setLoadingQuestions] = useState(!state?.questions?.length)
 
   // answers[i] is "A" | "B" | "C" | "D" | null
   const [answers, setAnswers] = useState(Array(5).fill(null))
@@ -53,8 +54,38 @@ export default function Quiz() {
   const [results, setResults] = useState(null) // QuizSubmitResponse
   const [submitError, setSubmitError] = useState('')
 
+  useEffect(() => {
+    if (!questions.length && lessonId) {
+      setLoadingQuestions(true)
+      quizzesApi.generate({ lesson_id: lessonId })
+        .then((res) => {
+          if (res.data?.questions) {
+            setQuestions(res.data.questions)
+          }
+        })
+        .catch((err) => {
+          console.error("Failed to load quiz", err)
+        })
+        .finally(() => {
+          setLoadingQuestions(false)
+        })
+    }
+  }, [lessonId])
+
   // If navigated to directly without questions, redirect back
-  if (!questions.length) {
+  if (loadingQuestions) {
+    return (
+      <div style={{ minHeight: '100vh', background: 'var(--bg-primary)' }}>
+        <Navbar />
+        <div style={{ textAlign: 'center', padding: '5rem 2rem' }}>
+          <div className="spinner" style={{ width: 40, height: 40, margin: '0 auto 1.25rem' }} />
+          <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>Loading quiz…</p>
+        </div>
+      </div>
+    )
+  }
+
+  if (!questions.length && !loadingQuestions) {
     return (
       <div style={{ minHeight: '100vh', background: 'var(--bg-primary)' }}>
         <Navbar />
