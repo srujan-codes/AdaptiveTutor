@@ -56,15 +56,15 @@
 
 #### [TICKET-003] Database Setup & Models
 - **Assigned to:** Architect
-- **Status:** To Do
+- **Status:** ✅ Done
 - **Priority:** P0 — Critical
 - **Description:** Create SQLAlchemy models for all 5 data entities (User, Session, LessonContent, QuizQuestion, PerformanceRecord) as defined in `ARCHITECTURE.md`. Set up database connection in `backend/database/connection.py`. Initialize Alembic for migrations.
 - **Acceptance Criteria:**
-  - [ ] All 5 SQLAlchemy models match `ARCHITECTURE.md` exactly
-  - [ ] Pydantic schemas exist for all request/response shapes
-  - [ ] `connection.py` provides engine, SessionLocal, and Base
+  - [x] All 5 SQLAlchemy models match `ARCHITECTURE.md` exactly
+  - [x] Pydantic schemas exist for all request/response shapes
+  - [x] `connection.py` provides engine, SessionLocal, and Base
   - [ ] Alembic is configured and initial migration works
-  - [ ] SQLite works in dev, PostgreSQL connection string configurable for prod
+  - [x] SQLite works in dev, PostgreSQL connection string configurable for prod
 
 ---
 

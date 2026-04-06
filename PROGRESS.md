@@ -34,3 +34,39 @@
 ---
 
 <!-- Future entries go below this line -->
+
+## Day 1 — Update 2 (Architect: TICKET-003)
+
+### 🎯 What Was Planned
+- Architect: Create complete folder structure for `backend/` and `frontend/`
+- Architect: Implement all 5 SQLAlchemy models with Pydantic schemas ([TICKET-003])
+- Architect: Set up database connection layer
+
+### ✅ What Was Completed
+- [x] **Complete folder structure** — 56 files across `backend/` and `frontend/`
+  - `backend/`: models, routers, agents, services, database, tests (all with `__init__.py`)
+  - `frontend/`: src (pages, components, hooks, context, api), public, tests
+- [x] **5 SQLAlchemy models** — `User`, `Session`, `LessonContent`, `QuizQuestion`, `PerformanceRecord`
+  - All match `ARCHITECTURE.md` exactly
+  - All have relationships, foreign keys, and proper column types
+- [x] **Pydantic schemas** — All request/response shapes defined
+  - `UserCreate`, `UserResponse`, `LoginRequest`, `AuthResponse`
+  - `SessionCreate`, `SessionResponse`
+  - `LessonGenerateRequest`, `LessonResponse`
+  - `QuizGenerateRequest`, `QuizQuestionResponse`, `QuizSubmitRequest`, `QuizSubmitResponse`, `QuestionResult`
+  - `PerformanceRecordItem`, `PerformanceResponse`, `PerformanceInsightsResponse`, `StrategyResponse`
+- [x] **Database connection** — async SQLAlchemy engine, session factory, Base class, `get_db` dependency
+- [x] **App config** — `config.py` with pydantic-settings (DB URL, JWT, Claude API, CORS)
+- [x] **FastAPI app** — `main.py` with CORS, lifespan, health check, all routers registered
+- [x] **BaseAgent** — Abstract base class for all 5 AI agents
+- [x] **Stubs for all routers, agents, and services** — with TODO references to their tickets
+- [x] **Frontend scaffold files** — App.jsx with routing, all page/component stubs, hooks, context
+
+### 🚧 Blockers
+- Alembic migration config not yet initialized (needs `requirements.txt` from DevOps — TICKET-001)
+
+### ➡️ Next Steps
+- **DevOps Engineer:** TICKET-001 (Backend requirements.txt + .env.example) and TICKET-002 (Frontend package.json + Vite/Tailwind config) — these unblock everything
+- **Backend Lead:** Ready to start TICKET-004 (JWT Auth Service) once dependencies are installed
+
+---
