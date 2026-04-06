@@ -244,76 +244,80 @@
 
 #### [TICKET-015] API Client & Auth Context
 - **Assigned to:** Frontend Lead
-- **Status:** To Do
+- **Status:** Done
 - **Priority:** P0 — Critical
 - **Description:** Build `frontend/src/api/client.js` (Axios instance with auth interceptor, base URL config, error handling) and `frontend/src/context/AuthContext.jsx` (login, logout, token persistence, protected route wrapper).
 - **Acceptance Criteria:**
-  - [ ] Axios client auto-attaches Bearer token
-  - [ ] Client handles 401 by redirecting to login
-  - [ ] AuthContext provides `user`, `login()`, `logout()`, `isAuthenticated`
-  - [ ] Token persisted in localStorage
-  - [ ] Protected route component redirects to login if not authenticated
+  - [x] Axios client auto-attaches Bearer token
+  - [x] Client handles 401 by redirecting to login
+  - [x] AuthContext provides `user`, `login()`, `logout()`, `isAuthenticated`
+  - [x] Token persisted in localStorage
+  - [x] Protected route component redirects to login if not authenticated
 
 ---
 
 #### [TICKET-016] Landing & Login Pages
 - **Assigned to:** Frontend Lead
-- **Status:** To Do
+- **Status:** Done
 - **Priority:** P1 — High
 - **Dependencies:** TICKET-015
 - **Description:** Build `Landing.jsx` (hero section, feature highlights, CTA to register/login) and `Login.jsx` (login form + registration toggle, error display, redirect to dashboard on success).
 - **Acceptance Criteria:**
-  - [ ] Landing page is visually polished, responsive, and has clear CTA
-  - [ ] Login page supports both login and registration
-  - [ ] Form validation with error messages
-  - [ ] Loading states during auth requests
-  - [ ] Redirects to Dashboard on successful auth
+  - [x] Landing page is visually polished, responsive, and has clear CTA
+  - [x] Login page supports both login and registration
+  - [x] Form validation with error messages
+  - [x] Loading states during auth requests
+  - [x] Redirects to Dashboard on successful auth
+
 
 ---
 
 #### [TICKET-017] Dashboard Page
 - **Assigned to:** Frontend Lead
-- **Status:** To Do
+- **Status:** Done
 - **Priority:** P1 — High
 - **Dependencies:** TICKET-015
 - **Description:** Build `Dashboard.jsx` — the main hub showing: topic selector for new lesson, recent sessions, current difficulty level, quick stats, and recommended next topic (when available).
 - **Acceptance Criteria:**
-  - [ ] TopicSelector component for starting new lessons
-  - [ ] Shows current difficulty level
-  - [ ] Displays recent session history
-  - [ ] Quick stats (total sessions, average score)
-  - [ ] Responsive layout
+  - [x] TopicSelector component for starting new lessons
+  - [x] Shows current difficulty level
+  - [x] Displays recent session history
+  - [x] Quick stats (total sessions, average score)
+  - [x] Responsive layout
+
 
 ---
 
 #### [TICKET-018] Lesson & Quiz Pages
 - **Assigned to:** Frontend Lead
-- **Status:** To Do
+- **Status:** Done
 - **Priority:** P1 — High
 - **Dependencies:** TICKET-015
 - **Description:** Build `Lesson.jsx` (displays lesson content with Markdown rendering, "Take Quiz" button) and `Quiz.jsx` (displays 5 questions, handles answer selection, submit, and results display).
 - **Acceptance Criteria:**
-  - [ ] Lesson page renders Markdown content properly
-  - [ ] Shows key concepts and estimated duration
-  - [ ] Quiz page displays all 5 questions with radio buttons
-  - [ ] Submit validates all questions answered
-  - [ ] Results page shows score, correct/incorrect, and explanations
-  - [ ] Shows new difficulty level after quiz
+  - [x] Lesson page renders Markdown content properly
+  - [x] Shows key concepts and estimated duration
+  - [x] Quiz page displays all 5 questions with radio buttons
+  - [x] Submit validates all questions answered
+  - [x] Results page shows score, correct/incorrect, and explanations
+  - [x] Shows new difficulty level after quiz
+
 
 ---
 
 #### [TICKET-019] Performance Page
 - **Assigned to:** Frontend Lead
-- **Status:** To Do
+- **Status:** Done
 - **Priority:** P2 — Medium
 - **Dependencies:** TICKET-015
 - **Description:** Build `Performance.jsx` with score history chart (ScoreChart component), AI-generated insights (InsightsPanel), and strategy recommendations.
 - **Acceptance Criteria:**
-  - [ ] Score history displayed as a chart
-  - [ ] InsightsPanel shows strengths, weaknesses, trends
-  - [ ] Strategy section shows recommended next topic
-  - [ ] Handles empty state (no sessions yet)
-  - [ ] Loading and error states
+  - [x] Score history displayed as a chart
+  - [x] InsightsPanel shows strengths, weaknesses, trends
+  - [x] Strategy section shows recommended next topic
+  - [x] Handles empty state (no sessions yet)
+  - [x] Loading and error states
+
 
 ---
 
