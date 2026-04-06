@@ -34,3 +34,36 @@
 ---
 
 <!-- Future entries go below this line -->
+
+## Day 1 — Update 2 (DevOps Engineer: TICKET-001, 002, 022, 023)
+
+### 🎯 What Was Planned
+- DevOps: Create backend project scaffold (requirements.txt, .env.example, config.py)
+- DevOps: Create frontend project scaffold (package.json, Vite, Tailwind, PostCSS configs)
+- DevOps: Set up deployment configs (render.yaml, vercel.json)
+
+### ✅ What Was Completed
+- [x] **[TICKET-001] Backend Scaffold**
+  - `requirements.txt` — 16 pinned dependencies (FastAPI, SQLAlchemy, Anthropic, pytest, etc.)
+  - `.env.example` — All env vars documented (App, DB, JWT, Claude API, CORS)
+  - `config.py` — pydantic-settings with computed properties (is_sqlite, is_production)
+- [x] **[TICKET-002] Frontend Scaffold**
+  - `package.json` — React 18, Vite 6, Tailwind 3, Axios, React Router, Recharts, react-markdown
+  - `vite.config.js` — Dev proxy to backend, vendor chunk splitting, Vitest config
+  - `tailwind.config.js` — Custom brand palette, typography (Inter/Outfit), animations, shadows
+  - `postcss.config.js` — Tailwind + Autoprefixer
+- [x] **[TICKET-022] Render Deployment**
+  - `render.yaml` — FastAPI web service + PostgreSQL database, health check, auto-generated JWT secret
+- [x] **[TICKET-023] Vercel Deployment**
+  - `vercel.json` — Vite build, API proxy rewrites, SPA fallback, security headers
+- [x] **Bonus: `.gitignore`** — Comprehensive ignore for Python, Node, env, DB, IDE files
+
+### 🚧 Blockers
+- `npm install` and `pip install` not yet validated (requires running on dev machine)
+
+### ➡️ Next Steps
+- Run `pip install -r backend/requirements.txt` to validate backend deps
+- Run `cd frontend && npm install` to validate frontend deps
+- Backend Lead can begin TICKET-004 (JWT Auth Service)
+
+---

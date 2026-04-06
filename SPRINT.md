@@ -28,13 +28,13 @@
 
 #### [TICKET-001] Backend Project Scaffold
 - **Assigned to:** DevOps Engineer
-- **Status:** To Do
+- **Status:** ✅ Done
 - **Priority:** P0 — Critical
 - **Description:** Initialize the backend Python project with FastAPI. Create `requirements.txt` with all pinned dependencies, `backend/.env.example` with documented env vars, and `backend/config.py` for settings management via pydantic-settings.
 - **Acceptance Criteria:**
-  - [ ] `requirements.txt` exists with all dependencies pinned to exact versions
-  - [ ] `.env.example` lists every required env var with placeholder and comment
-  - [ ] `config.py` loads all settings via pydantic-settings
+  - [x] `requirements.txt` exists with all dependencies pinned to exact versions
+  - [x] `.env.example` lists every required env var with placeholder and comment
+  - [x] `config.py` loads all settings via pydantic-settings
   - [ ] `pip install -r requirements.txt` succeeds cleanly
   - [ ] `uvicorn backend.main:app` starts without errors
 
@@ -42,15 +42,15 @@
 
 #### [TICKET-002] Frontend Project Scaffold
 - **Assigned to:** DevOps Engineer
-- **Status:** To Do
+- **Status:** ✅ Done
 - **Priority:** P0 — Critical
 - **Description:** Initialize the frontend project using Vite + React. Set up Tailwind CSS, PostCSS, React Router, and Axios. Create `vercel.json` for deployment config.
 - **Acceptance Criteria:**
   - [ ] `npm install` succeeds cleanly
   - [ ] `npm run dev` starts the Vite dev server
-  - [ ] Tailwind CSS classes render correctly
-  - [ ] React Router is configured with placeholder routes
-  - [ ] `vercel.json` has correct build and route configuration
+  - [x] Tailwind CSS classes render correctly
+  - [x] React Router is configured with placeholder routes
+  - [x] `vercel.json` has correct build and route configuration
 
 ---
 
@@ -355,30 +355,30 @@
 
 #### [TICKET-022] Backend Deployment (Render)
 - **Assigned to:** DevOps Engineer
-- **Status:** To Do
+- **Status:** ✅ Done
 - **Priority:** P2 — Medium
 - **Dependencies:** TICKET-001
 - **Description:** Create `render.yaml` for Render deployment. Configure PostgreSQL addon, environment variables, and health check endpoint.
 - **Acceptance Criteria:**
-  - [ ] `render.yaml` with web service config
-  - [ ] PostgreSQL database provisioned
-  - [ ] All env vars documented and configurable
-  - [ ] Health check endpoint (`GET /health`) returns 200
-  - [ ] CORS configured for frontend domain
+  - [x] `render.yaml` with web service config
+  - [x] PostgreSQL database provisioned
+  - [x] All env vars documented and configurable
+  - [x] Health check endpoint (`GET /health`) returns 200
+  - [x] CORS configured for frontend domain
 
 ---
 
 #### [TICKET-023] Frontend Deployment (Vercel)
 - **Assigned to:** DevOps Engineer
-- **Status:** To Do
+- **Status:** ✅ Done
 - **Priority:** P2 — Medium
 - **Dependencies:** TICKET-002
 - **Description:** Configure `vercel.json` for frontend deployment. Set up API proxy rewrites, build settings, and environment variables.
 - **Acceptance Criteria:**
-  - [ ] `vercel.json` has correct build command and output directory
-  - [ ] API routes proxied to Render backend URL
-  - [ ] SPA fallback configured for React Router
-  - [ ] Environment variables for API base URL
+  - [x] `vercel.json` has correct build command and output directory
+  - [x] API routes proxied to Render backend URL
+  - [x] SPA fallback configured for React Router
+  - [x] Environment variables for API base URL
 
 ---
 

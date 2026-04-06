@@ -1,7 +1,47 @@
-.env
+# AdaptiveTutor — Git Ignore
+
+# --- Python ---
 __pycache__/
-node_modules/
-.DS_Store
-*.pyc
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+*.egg
+
+# --- Virtual Environment ---
 venv/
+.venv/
+env/
+
+# --- Environment Variables ---
+.env
 .env.local
+.env.production
+
+# --- Database ---
+*.db
+*.sqlite3
+
+# --- IDE ---
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# --- Node ---
+node_modules/
+frontend/node_modules/
+frontend/dist/
+
+# --- Testing ---
+.coverage
+htmlcov/
+.pytest_cache/
+
+# --- Misc ---
+*.log
+.ruff_cache/

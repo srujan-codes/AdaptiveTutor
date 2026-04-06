@@ -1,0 +1,73 @@
+# ============================================================
+# AdaptiveTutor Backend — Render Deployment Configuration
+# Docs: https://docs.render.com/blueprint-spec
+# ============================================================
+
+services:
+  # --- Web Service (FastAPI Backend) ---
+  - type: web
+    name: adaptivetutor-api
+    runtime: python
+    region: oregon
+
+    # Build & start commands
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: uvicorn backend.main:app --host 0.0.0.0 --port $PORT
+
+    # Health check
+    healthCheckPath: /health
+
+    # Auto-deploy on push to main
+    autoDeploy: true
+
+    # Plan (free tier for development, upgrade for production)
+    plan: free
+
+    # Environment variables
+    envVars:
+      - key: APP_NAME
+        value: AdaptiveTutor
+
+      - key: APP_VERSION
+        value: 0.1.0
+
+      - key: DEBUG
+        value: "false"
+
+      - key: DATABASE_URL
+        fromDatabase:
+          name: adaptivetutor-db
+          property: connectionURI
+        # Note: Render provides postgresql:// but asyncpg needs postgresql+asyncpg://
+        # The app config handles this transformation
+
+      - key: JWT_SECRET_KEY
+        generateValue: true  # Render generates a cryptographically secure value
+
+      - key: JWT_ALGORITHM
+        value: HS256
+
+      - key: JWT_EXPIRATION_HOURS
+        value: "24"
+
+      - key: ANTHROPIC_API_KEY
+        sync: false  # Must be set manually in Render dashboard
+
+      - key: CLAUDE_MODEL
+        value: claude-sonnet-4-20250514
+
+      - key: CORS_ORIGINS
+        value: '["https://adaptivetutor.vercel.app"]'
+        # Update with actual Vercel domain after frontend deployment
+
+      - key: PYTHON_VERSION
+        value: "3.11.9"
+
+  # --- PostgreSQL Database ---
+databases:
+  - name: adaptivetutor-db
+    plan: free
+    region: oregon
+    databaseName: adaptivetutor
+    user: adaptivetutor_user
+    ipAllowList: []  # Only allow internal connections
