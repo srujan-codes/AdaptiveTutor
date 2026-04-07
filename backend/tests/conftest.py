@@ -104,7 +104,10 @@ async def test_user(db_session: AsyncSession) -> dict:
 @pytest.fixture
 def mock_claude():
     """Mock the Claude client to avoid real API calls in tests."""
-    with patch("backend.services.claude_client.ClaudeClient") as MockClient:
-        instance = MockClient.return_value
-        instance.send_message = AsyncMock()
+    with patch("services.claude_client.ClaudeClient.send_message", new_callable=AsyncMock) as mock_send:
+        # We can yield an object that acts like the old mock structure to avoid breaking existing tests
+        class MockClientWrapper:
+            pass
+        instance = MockClientWrapper()
+        instance.send_message = mock_send
         yield instance
