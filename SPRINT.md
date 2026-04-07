@@ -327,29 +327,29 @@
 
 #### [TICKET-020] Backend Auth & Lesson Tests
 - **Assigned to:** QA Engineer
-- **Status:** To Do
+- **Status:** Done
 - **Priority:** P1 — High
 - **Dependencies:** TICKET-005, TICKET-012
 - **Description:** Write pytest tests for auth endpoints (register, login, me) and lesson endpoints (generate, get). Mock Claude API.
 - **Acceptance Criteria:**
-  - [ ] 3+ tests per endpoint (happy path, validation error, auth error)
-  - [ ] Claude API is mocked — no real API calls
-  - [ ] Tests are independent (no shared state)
-  - [ ] All tests pass with `pytest`
+  - [x] 3+ tests per endpoint (happy path, validation error, auth error)
+  - [x] Claude API is mocked — no real API calls
+  - [x] Tests are independent (no shared state)
+  - [x] All tests pass with `pytest`
 
 ---
 
 #### [TICKET-021] Backend Quiz & Performance Tests
 - **Assigned to:** QA Engineer
-- **Status:** To Do
+- **Status:** Done
 - **Priority:** P2 — Medium
 - **Dependencies:** TICKET-013, TICKET-014
 - **Description:** Write pytest tests for quiz endpoints and performance/strategy endpoints. Mock Claude API.
 - **Acceptance Criteria:**
-  - [ ] 3+ tests per endpoint
-  - [ ] Quiz submit correctly scores answers and adjusts difficulty
-  - [ ] Performance endpoints handle min-session requirements
-  - [ ] All tests pass with `pytest`
+  - [x] 3+ tests per endpoint
+  - [x] Quiz submit correctly scores answers and adjusts difficulty
+  - [x] Performance endpoints handle min-session requirements
+  - [x] All tests pass with `pytest`
 
 ---
 
@@ -359,7 +359,7 @@
 
 #### [TICKET-022] Backend Deployment (Render)
 - **Assigned to:** DevOps Engineer
-- **Status:** To Do
+- **Status:** Done
 - **Priority:** P2 — Medium
 - **Dependencies:** TICKET-001
 - **Description:** Create `render.yaml` for Render deployment. Configure PostgreSQL addon, environment variables, and health check endpoint.
@@ -374,7 +374,7 @@
 
 #### [TICKET-023] Frontend Deployment (Vercel)
 - **Assigned to:** DevOps Engineer
-- **Status:** To Do
+- **Status:** Done
 - **Priority:** P2 — Medium
 - **Dependencies:** TICKET-002
 - **Description:** Configure `vercel.json` for frontend deployment. Set up API proxy rewrites, build settings, and environment variables.

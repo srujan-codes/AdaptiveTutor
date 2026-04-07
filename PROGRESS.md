@@ -47,4 +47,14 @@
 
 ---
 
+### Day 5: Deployment Configuration
+- **DevOps Engineer:** Created complete Render configuration (`backend/render.yaml` and `backend/Procfile`).
+- Created complete Vercel configuration (`frontend/vercel.json`) with SPA routing rewrites.
+- Updated `README.md` with full deployment guide, required environment variables, and local setup instructions.
+
+### Day 6: QA Testing
+- **QA Engineer:** Implemented full suite of PyTest end-to-end tests covering Auth, Lesson, Quiz, Performance, and Strategy endpoints.
+- Validated Claude API mocker (`mock_claude`) ensuring independent, isolated execution locally intercepting Groq endpoints perfectly.
+- All acceptance criteria spanning authentication paths, data payloads, and complex 5-prompt generative flows met successfully. Tests passed flawlessly.
+
 <!-- Future entries go below this line -->
